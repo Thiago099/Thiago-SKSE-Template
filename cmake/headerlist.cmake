@@ -1,4 +1,4 @@
-set(headers ${HEADER_FILES}
+set(HEADER_FILES
 	include/logger.h
 	include/PCH.h
 	include/SKSEMenuFramework.h

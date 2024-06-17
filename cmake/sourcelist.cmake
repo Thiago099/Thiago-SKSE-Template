@@ -1,4 +1,4 @@
-set(sources ${SOURCE_FILES}
+set(SOURCE_FILES
 	src/plugin.cpp
 	src/UI.cpp
 )
