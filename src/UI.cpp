@@ -10,5 +10,13 @@ void UI::Register() {
 }
 
 void __stdcall UI::Menu1::Render() { 
-    ImGui::Text("Hello World");
+    FontAwesome::PushSolid();
+    Font::PushBig();
+    ImGui::Text((FontAwesome::UnicodeToUtf8(0xf03e) + "Hello World").c_str());
+    Font::PushDefault();
+    ImGui::Text((FontAwesome::UnicodeToUtf8(0xf03e) + "Hello World").c_str());
+    Font::PushSmall();
+    ImGui::Text((FontAwesome::UnicodeToUtf8(0xf03e) + "Hello World").c_str());
+    Font::Clear();
+    ImGui::Text((FontAwesome::UnicodeToUtf8(0xf03e) + "Hello World").c_str());
 }

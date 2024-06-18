@@ -52,6 +52,32 @@ namespace SKSEMenuFramework {
 
     inline void SetSection(std::string key) { Internal::key = key; }
 }
+namespace Font {
+    inline void PushBig() {
+        static auto func = SKSEMenuFramework::Internal::GetFunction<SKSEMenuFramework::Model::ActionFunction>("PushBig");
+        if (func) {
+            return func();
+        }
+    }
+    inline void PushDefault() {
+        static auto func = SKSEMenuFramework::Internal::GetFunction<SKSEMenuFramework::Model::ActionFunction>("PushDefault");
+        if (func) {
+            return func();
+        }
+    }
+    inline void PushSmall() {
+        static auto func = SKSEMenuFramework::Internal::GetFunction<SKSEMenuFramework::Model::ActionFunction>("PushSmall");
+        if (func) {
+            return func();
+        }
+    }
+    inline void Clear() {
+        static auto func = SKSEMenuFramework::Internal::GetFunction<SKSEMenuFramework::Model::ActionFunction>("Pop");
+        if (func) {
+            return func();
+        }
+    }
+}
 namespace FontAwesome {
     inline void PushSolid() {
         static auto func =
@@ -74,12 +100,7 @@ namespace FontAwesome {
             return func();
         }
     }
-    inline void Pop() {
-        static auto func = SKSEMenuFramework::Internal::GetFunction<SKSEMenuFramework::Model::ActionFunction>("Pop");
-        if (func) {
-            return func();
-        }
-    }
+
     inline std::string UnicodeToUtf8(unsigned int codepoint) {
         std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> converter;
         std::string u8str = converter.to_bytes(codepoint);
